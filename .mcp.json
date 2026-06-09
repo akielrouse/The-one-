@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "polygon": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/polygon-io/[email protected]",
+        "mcp_polygon"
+      ],
+      "env": {
+        "POLYGON_API_KEY": "${POLYGON_API_KEY}"
+      }
+    }
+  }
+}
