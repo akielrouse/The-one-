@@ -34,25 +34,36 @@ keeping: instant settlement (reuse sale proceeds immediately) and fractional sha
 5. Good news: the US **Pattern Day Trader** rule ($25k minimum) does **not** apply to Canadian
    Questrade accounts.
 
-## 2. Market data — Polygon.io MCP (free tier)
+## 2. Market data — Massive MCP (free tier)
 
 The free tier is **15-minute delayed** and rate-limited — **perfect for swing trading**
 (we hold for days; we do not need tick data). See `.mcp.json` in this repo.
 
+> **Heads-up (verified 2026-06-09):** Polygon's MCP was rebranded to **Massive**
+> (`massive-com/mcp_massive`, current `v0.10.0`); console cmd `mcp_massive`, key env
+> `MASSIVE_API_KEY` (`POLYGON_API_KEY` still works as a deprecated alias). The OLD
+> `uvx --from git+...polygon-io/[email protected] mcp_polygon` form is **broken** — the bare
+> `git+...` URL no longer parses under modern `uv`, and `uvx --from` re-downloads deps on
+> every cold start, which can exceed Claude's 30-second MCP connection timeout. Use
+> `uv tool install` (caches once) instead.
+
 ### Steps
-1. Create a free API key at https://polygon.io (Dashboard → API Keys).
-2. Install [`uv`](https://docs.astral.sh/uv/) (provides `uvx`).
-3. Add the server to Claude Code (easiest — one line):
+1. Get a free API key (Massive/Polygon dashboard → API Keys). An existing Polygon key works
+   as the `MASSIVE_API_KEY` *value*.
+2. Install [`uv`](https://docs.astral.sh/uv/) (provides `uvx` + `uv tool`).
+3. Install the server once — caches deps and puts `mcp_massive` on your PATH:
    ```
-   claude mcp add polygon -e POLYGON_API_KEY=YOUR_KEY -- \
-     uvx --from git+https://github.com/polygon-io/[email protected] mcp_polygon
+   uv tool install "mcp_massive @ git+https://github.com/massive-com/mcp_massive@v0.10.0"
    ```
-   > Note: Polygon's MCP was rebranded to **Massive** (`massive-com/mcp_massive`).
-   > `POLYGON_API_KEY` still works as a deprecated alias. If the pinned version above
-   > breaks, switch to `git+https://github.com/massive-com/mcp_massive@latest` and key `MASSIVE_API_KEY`.
-4. Or use the committed `.mcp.json` (project scope) and export your key:
-   `export POLYGON_API_KEY=YOUR_KEY` before launching Claude Code.
-5. **Never commit your API key.** `.mcp.json` uses `${POLYGON_API_KEY}` on purpose.
+4. Set your key (persistent, never committed). Windows PowerShell:
+   ```
+   [Environment]::SetEnvironmentVariable('MASSIVE_API_KEY','YOUR_KEY','User')
+   ```
+   (bash: `export MASSIVE_API_KEY=YOUR_KEY` before launching Claude Code)
+5. Launch Claude Code **from this repo dir in a new shell**. The committed `.mcp.json`
+   (project scope) runs `command: mcp_massive` with `${MASSIVE_API_KEY}` and loads on launch
+   — approve the project server when prompted. (MCP servers load only on a fresh start.)
+6. **Never commit your API key.** `.mcp.json` uses `${MASSIVE_API_KEY}` on purpose.
 
 ## 3. Journal — Notion (your system of record)
 
