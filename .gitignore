@@ -1,0 +1,6 @@
+# Secrets - never commit (added with the Questrade read-only connector)
+.questrade/
+token.json
+*.token
+.env
+.env.local
