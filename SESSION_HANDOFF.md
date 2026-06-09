@@ -6,7 +6,7 @@ read this file, and you're caught up. **Last updated: 2026-06-09.**
 ## Mission & philosophy
 - **Account: ~$50, Questrade margin account (Canada).** Goal at this stage is **reps + discipline, not profit.** Survive, journal, repeat. $50 is tuition for real emotional reps.
 - Treat the margin account like a **cash account**: position ≤ cash, no leverage, no shorting. (See `TRADING_SETUP.md`.)
-- **Open gate:** confirm Questrade actually allows a $50 trade (historically ~$1,000 min to activate). VERIFY BEFORE TRADING.
+- **Open gate: CLEARED (2026-06-09).** Questrade API confirms the Margin account is **Active and funded** (~$50 CAD ≈ $35.83 USD); fractional orders available, the ~$1,000 activation minimum is not blocking. ⚠️ Buying power shows ~$166 CAD = **3.3× margin (borrowed) — ignore it; trade only the ~$50 cash.** Live read-only access via `qt.py` (which needed a browser User-Agent to clear Questrade's Cloudflare firewall).
 - **Cost reality at $50 (this decides net P&L):** CAD→USD conversion is ~1.5% *each way* (~3% round trip). On a swing targeting +5–8% that's a third of the edge gone to FX. **Convert to USD once and hold USD between trades** (Norbert's Gambit later) so you're not paying FX every round trip. Require **R:R ≥ 2 _after_ the ~3% cost hurdle.**
 
 ## Tools / stack

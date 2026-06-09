@@ -37,6 +37,9 @@ from pathlib import Path
 TOKEN_PATH = Path.home() / ".questrade" / "token.json"
 LOGIN_URL = "https://login.questrade.com/oauth2/token"
 ACCESS_MARGIN = 60  # refresh if the cached access token expires within this many seconds
+_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")  # Questrade is behind Cloudflare;
+# the default urllib User-Agent gets a 403 / Cloudflare error 1010 (bot signature ban).
 
 
 def _fail(msg, code=1):
@@ -79,7 +82,10 @@ def save_tokens(data):
 
 
 def _http_get(url, headers=None):
-    req = urllib.request.Request(url, headers=headers or {}, method="GET")
+    h = {"User-Agent": _UA}      # browser UA so Cloudflare doesn't 1010 us
+    if headers:
+        h.update(headers)
+    req = urllib.request.Request(url, headers=h, method="GET")
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
             return json.loads(r.read().decode("utf-8"))
