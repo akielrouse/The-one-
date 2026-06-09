@@ -18,6 +18,22 @@ reps, not get rich.** Survive, journal, repeat.
     trading*. **Verify your account is actually fundable/tradeable at $50** before planning trades.
   - Real-time execution; fractional dividends paid automatically.
 
+### Margin account rules (READ THIS)
+
+A margin account is fine to use — but **treat it exactly like a cash account.** The margin
+(leverage) feature is the #2 account-killer for beginners, right behind options. Perks worth
+keeping: instant settlement (reuse sale proceeds immediately) and fractional shares.
+
+1. **Position size ≤ your actual cash balance.** With $50, the most stock you ever hold is $50.
+2. **Ignore "buying power."** Questrade may show a number larger than your deposit — that extra
+   is *borrowed money*. Watch your **cash balance**, not buying power.
+3. **Never short sell.** Margin accounts allow betting against stocks; shorting has unlimited
+   loss potential. Long-only while learning.
+4. **Never borrow / never use leverage.** It amplifies losses as much as gains, can trigger a
+   margin call (forced sale at the worst moment), and charges interest.
+5. Good news: the US **Pattern Day Trader** rule ($25k minimum) does **not** apply to Canadian
+   Questrade accounts.
+
 ## 2. Market data — Polygon.io MCP (free tier)
 
 The free tier is **15-minute delayed** and rate-limited — **perfect for swing trading**
