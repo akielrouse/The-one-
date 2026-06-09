@@ -28,6 +28,7 @@ read this file, and you're caught up. **Last updated: 2026-06-09.**
   - **Preferred entry:** on a not-hot CPI, IF it holds $407.78 with a reversal candle → enter **~$410–412**, stop just under the shelf **~$405** (risk ≈ $6), T1 **$435**, T2 **$450** → **R:R ≈ 4 to T1.**
   - **Do NOT chase a $420+ reclaim** — reward-to-$435 collapses to ~1:1 and fails the R:R gate.
   - Next earnings late July (clear of this window). Levels are Jun 8 close — **confirm live before acting (rule #2).**
+- **NOK (Nokia) ~$14.59 — STALK (whole-market RS scan, 2026-06-09).** Real AI-networking re-rating, NOT a pump: AI/cloud sales +49%, €1B cloud orders (AI-datacenter optical), **NVIDIA AI-RAN partnership**, analyst PTs raised to **$17–20**, insider buying, 17-yr high. Up ~3.6× off the low → don't chase. Liquid ($1.5B/day), affordable (~$15, whole shares fit ~$36 USD). **Do NOT buy at $14.59 (no-man's-land, R:R ~1.4).** Stalk a pullback to the **rising 50-day ~$12.80** → stop **$11.80**, target **$17.45** → **R:R 4.65** (3.07 even if you round-trip FX). Entry window likely **post-FOMC (Jun 17+)**; exit before Nokia's ~late-July earnings (rule #3). Confirm catalyst still intact + live price at trigger.
 
 ## Current decision — ARMED, not firing
 **Be flat into CPI (rule #4).** The Monday bounce is not a reason to chase right before a binary print with ~66% hot odds. Cash is a position.
